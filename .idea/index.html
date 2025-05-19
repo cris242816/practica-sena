@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparativa: GitHub vs GitLab vs Bitbucket</title>
+    <style>
+        :root {
+            --github: #181717;
+            --gitlab: #FC6D26;
+            --bitbucket: #0052CC;
+            --text: #333;
+            --light: #f8f9fa;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--github), var(--gitlab), var(--bitbucket));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .platforms {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .platform {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .platform:hover {
+            transform: translateY(-5px);
+        }
+
+        .github {
+            border-top: 5px solid var(--github);
+        }
+
+        .gitlab {
+            border-top: 5px solid var(--gitlab);
+        }
+
+        .bitbucket {
+            border-top: 5px solid var(--bitbucket);
+        }
+
+        .platform-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .platform-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .platform-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .github .platform-title {
+            color: var(--github);
+        }
+
+        .gitlab .platform-title {
+            color: var(--gitlab);
+        }
+
+        .bitbucket .platform-title {
+            color: var(--bitbucket);
+        }
+
+        .feature-list {
+            list-style-type: none;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .github .feature-list li::before {
+            color: var(--github);
+        }
+
+        .gitlab .feature-list li::before {
+            color: var(--gitlab);
+        }
+
+        .bitbucket .feature-list li::before {
+            color: var(--bitbucket);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: white;
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table th {
+            background-color: #f1f1f1;
+            font-weight: bold;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .github-bg {
+            background-color: rgba(24, 23, 23, 0.05);
+        }
+
+        .gitlab-bg {
+            background-color: rgba(252, 109, 38, 0.05);
+        }
+
+        .bitbucket-bg {
+            background-color: rgba(0, 82, 204, 0.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .platforms {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .platform {
+                width: 100%;
+            }
+
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>GitHub vs GitLab vs Bitbucket</h1>
+    <p class="subtitle">Comparativa de las principales plataformas de control de versiones</p>
+</header>
+
+<main>
+    <div class="platforms">
+        <div class="platform github">
+            <div class="platform-header">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" class="platform-icon">
+                <h2 class="platform-title">GitHub</h2>
+            </div>
+            <p>La plataforma de desarrollo colaborativo más popular, adquirida por Microsoft en 2018.</p>
+            <ul class="feature-list">
+                <li>Repositorios públicos ilimitados</li>
+                <li>GitHub Actions para CI/CD</li>
+                <li>GitHub Pages para hosting</li>
+                <li>Gran comunidad y ecosistema</li>
+                <li>Copilot (IA para programación)</li>
+            </ul>
+            <p><strong>Perfecto para:</strong> Proyectos open source y desarrolladores que buscan visibilidad.</p>
+            <p><a href="https://github.com" target="_blank">Visitar GitHub →</a></p>
+        </div>
+
+        <div class="platform gitlab">
+            <div class="platform-header">
+                <img src="https://about.gitlab.com/images/press/logo/png/gitlab-icon-rgb.png" alt="GitLab Logo" class="platform-icon">
+                <h2 class="platform-title">GitLab</h2>
+            </div>
+            <p>Plataforma completa DevOps con herramientas integradas para todo el ciclo de desarrollo.</p>
+            <ul class="feature-list">
+                <li>DevOps completo en una sola plataforma</li>
+                <li>CI/CD integrado</li>
+                <li>Auto DevOps para despliegue automático</li>
+                <li>Opción de autohospedaje</li>
+                <li>Herramientas de seguridad integradas</li>
+            </ul>
+            <p><strong>Perfecto para:</strong> Equipos que necesitan un flujo DevOps completo.</p>
+            <p><a href="https://gitlab.com" target="_blank">Visitar GitLab →</a></p>
+        </div>
+
+        <div class="platform bitbucket">
+            <div class="platform-header">
+                <img src="https://wac-cdn.atlassian.com/dam/jcr:e2a6f06a-b725-40a5-ae26-7a5f29c2274a/Bitbucket-blue.svg" alt="Bitbucket Logo" class="platform-icon">
+                <h2 class="platform-title">Bitbucket</h2>
+            </div>
+            <p>Plataforma de Git de Atlassian, integrada con Jira y otras herramientas empresariales.</p>
+            <ul class="feature-list">
+                <li>Integración con Jira y Trello</li>
+                <li>Pipelines para CI/CD</li>
+                <li>Soporte para Mercurial (además de Git)</li>
+                <li>Enfoque empresarial</li>
+                <li>Buenas opciones para equipos pequeños</li>
+            </ul>
+            <p><strong>Perfecto para:</strong> Empresas que ya usan herramientas Atlassian.</p>
+            <p><a href="https://bitbucket.org" target="_blank">Visitar Bitbucket →</a></p>
+        </div>
+    </div>
+
+    <h2 style="text-align: center; margin: 40px 0 20px;">Comparativa Detallada</h2>
+
+    <table class="comparison-table">
+        <tr>
+            <th>Característica</th>
+            <th class="github-bg">GitHub</th>
+            <th class="gitlab-bg">GitLab</th>
+            <th class="bitbucket-bg">Bitbucket</th>
+        </tr>
+        <tr>
+            <td>Propietario</td>
+            <td class="github-bg">Microsoft</td>
+            <td class="gitlab-bg">GitLab Inc.</td>
+            <td class="bitbucket-bg">Atlassian</td>
+        </tr>
+        <tr>
+            <td>Modelo de negocio</td>
+            <td class="github-bg">Freemium</td>
+            <td class="gitlab-bg">Freemium (open core)</td>
+            <td class="bitbucket-bg">Freemium</td>
+        </tr>
+        <tr>
+            <td>Repositorios privados gratis</td>
+            <td class="github-bg">Sí (límite de colaboradores)</td>
+            <td class="gitlab-bg">Sí (ilimitados)</td>
+            <td class="bitbucket-bg">Sí (hasta 5 usuarios)</td>
+        </tr>
+        <tr>
+            <td>CI/CD integrado</td>
+            <td class="github-bg">GitHub Actions</td>
+            <td class="gitlab-bg">GitLab CI/CD</td>
+            <td class="bitbucket-bg">Bitbucket Pipelines</td>
+        </tr>
+        <tr>
+            <td>Integraciones principales</td>
+            <td class="github-bg">Azure, VS Code, Slack</td>
+            <td class="gitlab-bg">Kubernetes, Docker, AWS</td>
+            <td class="bitbucket-bg">Jira, Trello, Bamboo</td>
+        </tr>
+        <tr>
+            <td>Precio para equipos pequeños</td>
+            <td class="github-bg">$4/usuario/mes</td>
+            <td class="gitlab-bg">$19/usuario/mes</td>
+            <td class="bitbucket-bg">$3/usuario/mes</td>
+        </tr>
+    </table>
+</main>
+
+<footer>
+    <p>© 2023 Comparativa de Plataformas Git | Creado con ❤️ para desarrolladores</p>
+    <p>Última actualización: Octubre 2023</p>
+</footer>
+</body>
+</html>
